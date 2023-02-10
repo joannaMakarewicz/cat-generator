@@ -1,3 +1,4 @@
+import React, { useEffect, useState} from 'react'
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
@@ -23,31 +24,49 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 function App() {
+
+  const [cat, setCat] = useState('');
+  const [imgg,setimg] = useState('');
+  const [radio, setRadio] = useState('');
+  const [loading, setloading]=useState(false);
+  const [errorStatus, setErrorStatus] = useState(null);
+
+  const handleChange = e =>{
+    const target = e.target;
+    if(target.checked){
+      setRadio(target.value)
+    }
+  }
+
+  console.log(radio);
   return (
     <Box className="child">
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <Item>
             <FormControl noValidate autoComplete="off">
-              <TextField placeholder="Add Cat Name" type="text" id="cat" />
+              <TextField placeholder="Add Cat Name" type="text" id="cat" name="cat" onChange={(e) => setCat(e.target.value)} />
               <RadioGroup name="radio-buttons-group">
                 <FormControlLabel
                   type="text"
                   value="red"
                   label="Red"
                   control={<Radio />}
+                  onChange={handleChange}
                 />
                 <FormControlLabel
                   type="text"
                   value="green"
                   label="Green"
                   control={<Radio />}
+                  onChange={handleChange}
                 />
                 <FormControlLabel
                   type="text"
                   value="blue"
                   label="Blue"
                   control={<Radio />}
+                  onChange={handleChange}
                 />
               </RadioGroup>
             </FormControl>

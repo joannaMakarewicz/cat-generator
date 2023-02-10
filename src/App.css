@@ -1,1 +1,9 @@
-
+.child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('../public/assets/img/cat.jpg');
+  background-size: cover;
+  background-position: center;
+}

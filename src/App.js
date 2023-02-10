@@ -26,9 +26,9 @@ const Item = styled(Paper)(({ theme }) => ({
 function App() {
 
   const [cat, setCat] = useState('');
-  const [imgg,setimg] = useState('');
+  const [img,setImg] = useState('');
   const [radio, setRadio] = useState('');
-  const [loading, setloading]=useState(false);
+  const [loading, setLoading]=useState(false);
   const [errorStatus, setErrorStatus] = useState(null);
 
   const handleChange = e =>{
@@ -38,7 +38,29 @@ function App() {
     }
   }
 
-  console.log(radio);
+  useEffect(() => {
+    const imageUrl = "https://cataas.com/cat";
+    const waitTime = 2000;
+    const fetchImage = async() => {
+      const res = await fetch(imageUrl);
+      if(res.status <200 || res.status >= 300) {
+        setErrorStatus(res.status);
+      }
+      const imageBlob = await res.blob();
+      const imageObjectURL = URL.createObjectURL(imageBlob);
+      setImg(imageObjectURL);
+      setLoading(false);
+    }
+    if(cat != ""){
+      setLoading(true);
+      setImg(null);
+      setErrorStatus(null);
+    }
+
+    const catTimer = setTimeout(() =>
+      fetchImage(), waitTime);
+    }, [cat, radio])
+
   return (
     <Box className="child">
       <Grid container spacing={2}>
@@ -74,8 +96,8 @@ function App() {
         </Grid>
 
         <Grid item xs={6}>
-          <Item>
-            <h2>Cat could not be generated</h2>
+          <Item className='cats'>
+            <img src={img} alt='cat' className='cats__image'/>
           </Item>
         </Grid>
         </Grid>

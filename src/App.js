@@ -39,8 +39,8 @@ function App() {
   }
 
   useEffect(() => {
-    const imageUrl = "https://cataas.com/cat";
-    const waitTime = 2000;
+    const imageUrl = "https://cataas.com/cat/says/" + cat;
+    const waitTime = 500;
     const fetchImage = async() => {
       const res = await fetch(imageUrl);
       if(res.status <200 || res.status >= 300) {
@@ -51,7 +51,7 @@ function App() {
       setImg(imageObjectURL);
       setLoading(false);
     }
-    if(cat != ""){
+    if(cat !== ""){
       setLoading(true);
       setImg(null);
       setErrorStatus(null);
@@ -66,6 +66,10 @@ function App() {
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <Item>
+          {
+              !cat && <h1>
+              Use form to generate cat's image</h1>
+            }
             <FormControl noValidate autoComplete="off">
               <TextField placeholder="Add Cat Name" type="text" id="cat" name="cat" onChange={(e) => setCat(e.target.value)} />
               <RadioGroup name="radio-buttons-group">
@@ -97,6 +101,10 @@ function App() {
 
         <Grid item xs={6}>
           <Item className='cats'>
+            {loading && <h1>Loading...</h1>}
+            {
+              errorStatus && <h1>Cat's image couldn't be generated</h1>
+            }
             <img src={img} alt='cat' className='cats__image'/>
           </Item>
         </Grid>

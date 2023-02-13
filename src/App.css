@@ -10,6 +10,7 @@
 .cats {
   display: flex;
 }
+
 .cats__image {
   margin: auto;
   max-height: 90%;

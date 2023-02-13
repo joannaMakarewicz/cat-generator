@@ -1,0 +1,36 @@
+
+#box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url("../../public/assets/img/cat.jpg");
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+  }
+  .box__grid {
+width: 80vw;
+  }
+
+  #box__item {
+    margin: 0;
+    padding: 0;
+  }
+
+  .box__item {
+    margin:40px;
+  }
+  .cats {
+    display: flex;
+  }
+  
+  .cats__image {
+    margin: 20px;
+    max-height: 90%;
+    max-width: 90%;
+  }
+
+
+

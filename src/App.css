@@ -1,18 +1,18 @@
 html {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    scroll-padding-top: 190px;
-    @media screen and (max-width: 1023px){
-      scroll-padding-top: 90px;
-    }
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 190px;
+  @media screen and (max-width: 1023px) {
+    scroll-padding-top: 90px;
   }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
-  
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
-    height: 100vh;
+  height: 100vh;
 }

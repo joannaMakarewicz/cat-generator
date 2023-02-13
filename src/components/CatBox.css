@@ -10,24 +10,28 @@
     margin: 0;
     padding: 0;
   }
-  .box__grid {
-width: 80vw;
-  }
 
   #box__item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0;
-    padding: 0;
   }
 
-  .box__item {
-    margin:40px;
+  .box__grid {
+    margin:10px;
   }
+
+  .box__formControl {
+  margin:30px;
+}
+
   .cats {
     display: flex;
   }
   
   .cats__image {
-    margin: 20px;
     max-height: 90%;
     max-width: 90%;
   }

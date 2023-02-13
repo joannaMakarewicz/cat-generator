@@ -10,6 +10,7 @@ import {
 import Radio from "@mui/material/Radio";
 import Item from "./Item";
 import "./CatBox.css";
+import { Container } from "@mui/material";
 
 function CatBox() {
   const [cat, setCat] = useState("");
@@ -52,18 +53,18 @@ function CatBox() {
 
   return (
     <Box id="box">
-      <Grid
-        container
-        spacing={2}
+      <Grid 
+      container
+      wrap="wrap"
         direction="row"
         justifyContent="center"
         alignItems="center"
         className="box__container"
       >
-        <Grid item xs={12} sm={6} class="box__grid">
-          <Item id="box__item" sx={{height:'50vh', width:'500'}}>
-            <h1>Use form to generate cat's image</h1>
-            <FormControl noValidate autoComplete="off">
+        <Grid item sm={6} xs={12} class="box__grid">
+          <Item id="box__item" sx={{height:'40vh', width:'500'}}>
+            <h1 className="box__heading">Use form to generate cat's image</h1>
+            <FormControl noValidate autoComplete="off" className="box__formControl">
               <TextField
                 placeholder="Add Cat Name"
                 type="text"
@@ -99,7 +100,7 @@ function CatBox() {
         </Grid>
 
         <Grid item xs={12} sm={6} class="box__grid">
-          <Item id="box__item" sx={{height:'50vh', width:'500'}}>
+          <Item id="box__item" sx={{height:'40vh', width:'500px'}}>
             {loading && <h1>Loading...</h1>}
             {errorStatus && <h1>Cat's image couldn't be generated</h1>}
             <img src={img} alt="cat" className="cats__image" />

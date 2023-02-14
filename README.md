@@ -21,4 +21,5 @@ Skills used to build Project:
 - JS
 - Material UI
 - API (fetch)
+- SASS
 - Dotenv.

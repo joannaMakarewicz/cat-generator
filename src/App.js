@@ -1,6 +1,6 @@
 import React from "react";
 import CatBox from "./components/CatBox";
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
   return <CatBox />;

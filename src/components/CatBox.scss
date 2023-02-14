@@ -1,0 +1,43 @@
+#box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("../../public/assets/img/cat.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  &__item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    @media screen and (max-width: 450px) {
+      width: 90vw;
+    }
+  }
+}
+
+.box {
+  &__formControl {
+    margin: 30px;
+  }
+  &__grid {
+    margin: 10px;
+  }
+  &__heading {
+    background: linear-gradient(to right, #9b4583, #4573d8, #ff953e, #db49ba);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+}
+
+.cats {
+  display: flex;
+  &__image {
+    max-height: 90%;
+    max-width: 90%;
+  }
+}
